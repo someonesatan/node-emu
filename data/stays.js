@@ -3,9 +3,9 @@
     zones: [
       { id: 1, name: 'testName1' }
     ],
-    status: 'wwwww',
-    datetime_start: new Date.now(),
-    datetime_end: new Date.now(),
+    status: 'actived',
+    datetime_start: Date.now(),
+    datetime_end: Date.now() - 12,
     duration: 66,
     vehicle_plate: 'АВ-756ук',
     id: '111222',
@@ -18,10 +18,10 @@
     zones: [
       { id: 2, name: 'testName2' }
     ],
-    status: 'eeee',
-    datetime_start: new Date.now(),
-    datetime_end: new Date.now(),
-    duration: 66,
+    status: 'ended',
+    datetime_start: Date.now(),
+    datetime_end: Date.now() - 25,
+    duration: 616,
     vehicle_plate: 'ЫД-156фк',
     id: '2221111',
     amount: 1488,
@@ -31,4 +31,4 @@
   }
 ]
 
-export default stays
+module.exports = stays

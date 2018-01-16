@@ -6,7 +6,7 @@ const cors = require('cors')
 const upload = multer();
 const bodyParser = require('body-parser');
 
-import stays from './data/stays'
+const stays = require('./data/stays')
 
 app.use(express.static('client'));
 app.use(cors())
@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.post('/', upload.array(), function (req, res, next) {
 	switch (req.body.method){
 		case 'stays.list':
+			console.log('we receive request')
 			res.json({ stays });
 			res.end();
 			break;
@@ -27,13 +28,13 @@ app.post('/', upload.array(), function (req, res, next) {
 			break;
 		default:
 			res.json({
-				result: 'Совпадений не найдено'
+				result: 'Incorrect method'
 			});
 			res.end();
 			break;
 	}
 });
 
-http.listen(3001, function() {
-	console.log('App listening on port 3001!');
+http.listen(8081, function() {
+	console.log('App listening on port 8081!');
 })
