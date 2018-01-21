@@ -17,7 +17,7 @@ app.post('/', upload.array(), function (req, res, next) {
 	switch (req.body.method){
 		case 'stays.list':
 			console.log('we receive request')
-			res.json({ stays });
+			res.json({ result: stays });
 			res.end();
 			break;
 		case 'stays.view':
@@ -35,6 +35,6 @@ app.post('/', upload.array(), function (req, res, next) {
 	}
 });
 
-http.listen(8081, function() {
-	console.log('App listening on port 8081!');
+http.listen(8000, function() {
+	console.log('App listening on port 8000!');
 })
